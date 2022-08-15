@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Currency_Transformation.Models;
 
- //Test comment
+ //Test comment 2
 
 namespace Currency_Transformation.Controllers
 {
