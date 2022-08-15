@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Currency_Transformation.Models.Transaction>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Peoples Bank Of India</h1>
+<h3>"Your Valuables, Our Service"</h3>
+<h4>Since 1950 for Citizens of India</h4>
+<h2>PassBook</h2>
+
+@*<p>
+    <a asp-action="AddOrEdit">Create New Transaction</a>
+</p>*@
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TransactionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AccountNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BeneficiaryName)
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.BankName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.swiftcode)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TransactionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AccountNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BeneficiaryName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.BankName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.swiftcode)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+             @*   <a asp-action="Edit" asp-route-id="@item.TransactionId">Edit</a> |*@
+                <a asp-action="Details" asp-route-id="@item.TransactionId">Details</a>
+                @*| <a asp-action="Delete" asp-route-id="@item.TransactionId">Delete</a>*@
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
